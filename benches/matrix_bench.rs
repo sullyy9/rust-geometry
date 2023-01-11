@@ -8,7 +8,7 @@ fn bench_default_construction(c: &mut Criterion) {
         b.iter(|| [[i32::default(); 3]; 2])
     });
     group.bench_function("Matrix Default Construction", |b| {
-        b.iter(|| Matrix::<2, 3, i32>::default())
+        b.iter(|| Matrix::<2, 3, {2 * 3}, i32>::default())
     });
     group.finish();
 }
